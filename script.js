@@ -3,31 +3,30 @@ var generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
   var password = ''
+  var specialCharacters = ["!@#$%^&*"]
+  var lowerCase = ["abcdefghijklmnopqrstuvwxyz"]
+  var upperCase = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"]
+  var numericValues = ["0123456789"]
 
-
-  //password length
-  var promptLength = window.prompt('How many characters would you like, between 8-128?');
-    if (promptLength < 8) {
+  var passwordLength = window.prompt('How many characters would you like, between 8-128?');
+    if (passwordLength < 8) {
       window.alert("Please select a password length between 8-128")
     }
-    if (promptLength > 128) {
+    if (passwordLength > 128) {
       window.alert("Please select a password length between 8-128")
     }
-    console.log(promptLength)
+    console.log(passwordLength)
 
-  let specialCharacters = "!@#$%^&*"
+
   confirm('Would you like to include special characters?');
   console.log(specialCharacters)
   
-  let lowerCase = "abcdefghijklmnopqrstuvwxyz";
   confirm('Would you like to include lower case letters?');
   console.log(lowerCase)
   
-  let upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   confirm('Would you like to include upper case letters?');
   console.log(upperCase)
 
-  let numericValues = "0123456789";
   confirm('Would you like to include numbers?');
   console.log(numericValues)
 
