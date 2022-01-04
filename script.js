@@ -4,26 +4,33 @@ var generateBtn = document.querySelector("#generate");
 function generatePassword() {
   var password = ''
 
+
+  //password length
   var promptLength = window.prompt('How many characters would you like, between 8-128?');
     if (promptLength < 8) {
-      window.prompt("Please select a number of characters between 8-128")
+      window.alert("Please select a password length between 8-128")
     }
     if (promptLength > 128) {
-      window.prompt("Please select a number of characters between 8-128")
+      window.alert("Please select a password length between 8-128")
     }
+    console.log(promptLength)
 
-  var promptCharacters = window.prompt('Would you like to include special characters?');
+  let specialCharacters = "!@#$%^&*"
+  confirm('Would you like to include special characters?');
+  console.log(specialCharacters)
   
-  var promptLower = window.prompt('Would you like to include lower case letters?');
+  let lowerCase = "abcdefghijklmnopqrstuvwxyz";
+  confirm('Would you like to include lower case letters?');
+  console.log(lowerCase)
   
-  var promptUpper = window.prompt('Would you like to include upper case letters?');
+  let upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  confirm('Would you like to include upper case letters?');
+  console.log(upperCase)
 
-  var prompNumber = window.prompt('Would you like to include numbers?');
+  let numericValues = "0123456789";
+  confirm('Would you like to include numbers?');
+  console.log(numericValues)
 
-
-  //charAt()
-  //while loops
-  //for loops
 
   return password
 }
