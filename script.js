@@ -1,7 +1,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-// 
+// function to generate password. Variables defined
 function generatePassword() {
   var password = ''
   var allCharacters = ''
@@ -10,28 +10,23 @@ function generatePassword() {
   var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
   var numericValues = "0123456789"
 
-  // 
+  // password length established with parameter alerts
   var passwordLength = window.prompt('How many characters would you like, between 8-128?');
   while (passwordLength < 8 || passwordLength > 128) {
     alert('Your password must be a number between 8 and 128')
     passwordLength = window.prompt('How many characters would you like, between 8-128?');
   }
-  console.log(passwordLength)
 
-// 
+// criteria selection confirmations
   var wantsSpecial = confirm('Click ok to confirm the use of special characters.');
-  console.log(specialCharacters)
 
   var wantsLower = confirm('Click ok to confirm the use of lower case letters.');
-  console.log(lowerCase)
 
   var wantsUpper = confirm('Click ok to confirm the use of upper case letters.');
-  console.log(upperCase)
 
   var wantsNumbers = confirm('Click ok to confirm the use of numbers.');
-  console.log(numericValues)
 
-  // 
+  // error loop
   while (!wantsSpecial && !wantsLower && !wantsUpper && !wantsNumbers) {
     alert('You must choose at least one character type for your password')
     wantsSpecial = confirm('Click ok to confirm the use of special characters.');
@@ -46,7 +41,7 @@ function generatePassword() {
     wantsNumbers = confirm('Click ok to confirm the use of numbers.');
     console.log(numericValues)
   }
-// 
+// build the string as criteria options are confirmed
 if(wantsSpecial) {
   allCharacters += specialCharacters
 }
@@ -65,7 +60,7 @@ if (wantsNumbers) {
 
 console.log(allCharacters);
 
-// 
+// equation to build password based on user input
 for (var i = 0; i < passwordLength; i++) {
   password += allCharacters.charAt(Math.floor(Math.random() * allCharacters.length))
 }
